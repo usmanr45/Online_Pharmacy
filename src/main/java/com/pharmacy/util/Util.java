@@ -1,0 +1,34 @@
+package com.pharmacy.util;
+
+
+import org.apache.http.impl.cookie.DateUtils;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class Util {
+
+    private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+
+    public static String getTodayDateString() {
+        Date today = new Date();
+        System.out.println(sdf.format(today));
+
+        return sdf.format(today);
+    }
+
+    public static Date getTodayDate() {
+        Calendar today = Calendar.getInstance();
+        Date todayDate = today.getTime();
+
+        return todayDate;
+    }
+
+    public static Date getYesterdayDate() {
+        final Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        return cal.getTime();
+    }
+}
